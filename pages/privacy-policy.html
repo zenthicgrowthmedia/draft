@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zenthic Growth Media | Digital Agency</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="script.js"></script>
+    <style>
+        .image-placeholder { background-color: #f3f4f6; border: 2px dashed #d1d5db; display: flex; align-items: center; justify-content: center; text-align: center; padding: 1rem; color: #9ca3af; }
+        .hero-gradient { background: linear-gradient(135deg, #ffffff 0%, #f0fdf4 100%); }
+    </style>
+</head>
+<body class="bg-white text-gray-900 font-sans leading-relaxed">
+
+    <nav class="sticky top-0 z-50 bg-white/80 backdrop-blur-md px-6 md:px-12 py-5 border-b border-gray-100">
+        <div class="flex justify-between items-center">
+
+            <!-- Logo -->
+            <div class="text-xl font-black tracking-tighter text-green-700">
+                <a href="../index.html" class="flex items-center gap-2">
+                    <img src="../assets/zen_growth_green700.png" class="w-10 h-10">
+                    <span>ZENTHIC<br>GROWTH MEDIA</span>
+                </a>
+            </div>
+            <div class="text-xl font-black tracking-tighter text-green-700">
+                <a class="flex items-center gap-2">Privacy Policy & Term of Services</a>
+            </div>
+
+            <!-- Hamburger -->
+            <button id="menu-btn" class="md:hidden flex flex-col gap-1">
+                <span class="line w-6 h-0.5 bg-black transition-all"></span>
+                <span class="line w-6 h-0.5 bg-black transition-all"></span>
+                <span class="line w-6 h-0.5 bg-black transition-all"></span>
+            </button>
+
+            <!-- Desktop Menu -->
+            <div class="hidden md:flex space-x-8 items-center">
+                <a href="../index.html" class="hover:text-green-700">Home</a>
+                <a href="about-us.html" class="hover:text-green-700">About</a>
+                <a href="../index.html#services" class="hover:text-green-700">Services</a>
+                <a href="../index.html#contact" class="bg-green-700 text-white px-5 py-2 rounded-full">Contact Us</a>
+            </div>
+
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="max-h-0 overflow-hidden transition-all duration-500 ease-in-out md:hidden flex flex-col items-center gap-5 mt-4">
+            <a href="../index.html">Home</a>
+            <a href="about-us.html">About</a>
+            <a href="../index.html#services">Services</a>
+            <a href="../index.html#contact" class="bg-green-700 text-white px-5 py-2 rounded-full">Contact Us</a>
+        </div>
+        <script>
+            const btn = document.getElementById("menu-btn");
+            const menu = document.getElementById("mobile-menu");
+            const lines = document.querySelectorAll(".line");
+
+            let open = false;
+
+            btn.addEventListener("click", () => {
+            open = !open;
+
+            // menu animation
+            if (open) {
+                menu.style.maxHeight = "300px";
+            } else {
+                menu.style.maxHeight = "0px";
+            }
+
+            // hamburger → X animation
+            lines[0].classList.toggle("rotate-45");
+            lines[0].classList.toggle("translate-y-1.5");
+
+            lines[1].classList.toggle("opacity-0");
+
+            lines[2].classList.toggle("-rotate-45");
+            lines[2].classList.toggle("-translate-y-1.5");
+            });
+        </script>
+    </nav>
+
+    <header id="home" class="hero-gradient">
+        <div class="container mx-auto px-6 md:px-1 py-20 flex flex-col md:flex-row">
+            <div>
+                <h1 class="text-5xl md:text-5xl font-extrabold leading-tight mb-6">Privacy Policy & Term of Services</h1>
+                <p class="text-lg md:text-3xl font-semibold text-gray-600 mb-4 max-w-lg">Zenthic Growth Media</p>
+                <div class="text-xl mb-8">
+                    <p class="mb-10">Last updated : June 19, 2025</p>
+                    <p>Please read this Privacy Policy and Terms of Services Carefully before using our website or purchasing any services.
+                    By accessing or using our services, you agree to be bound by both documents. If you do not agree, please don't use our services.</p>
+                </div>
+                <p class="flex-grow h-px bg-gray-400"></p>
+                <div class="text-xl mb-7"></div>
+            <div class="text-xl mb-10">
+                <h1 class=" md:text-4xl font-extrabold leading-tight mb-6">Privacy Policy</h1>
+                <p class="mb-4">We respect your privacy.</p>
+                <p class="mb-4">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; We collect your name, email, phone number, social media account details and payment information only to deliver our services like managing your account, creating graphics, running ads and tracking results.</p>
+                <p class="mb-4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;We never sell your data. We share it only with trusted partners (such as payment processors, service providers, ad platforms and designers) who need it to provide the services you requested. We store all your information securely and delete it when you stop being a customer, unless law requires us to keep it longer.</p>
+                <p class="mb-4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;You can request to update or delete your personal information at anytime by emailing us at <a href="mailto:zenthicgrowthmedia@gmail.com" class="bg-blue-100 text-blue hover:bg-blue-300">zenthicgrowthmedia@gmail.com</a></p>
+                <h2 class="text-lg md:text-xl font-bold">Important Note:</h2>
+                <p class="mb-10">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; While we use our best efforts and proven strategies to grow your social media presence, we cannot guarantee any specific results. Growth depends on many factors outside our control, including your content, audience, platform algorithms and market conditions. It is not our responsibility if your account doe not grow as expected.</p>
+                <p class="flex-grow h-px bg-gray-400"></p>
+            </div>  
+            <div class="text-xl mb-5">
+                <h1 class=" md:text-4xl font-extrabold leading-tight mb-8">Terms & Services</h1>
+                <h3 class="text-2xl md:text-2xl font-bold mb-5">1. Our Services</h3>
+                <p class="mb-6">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; We provide social media growth services including account boosting, account management, content creation, graphics designing, advertising campaigns and performance tracking. All services are described on our website.</p>
+                <h3 class="text-2xl md:text-2xl font-bold mb-5">2. User Responsibility</h3>
+                <p class="mb-6">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; You agree to:
+                    <br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;● Provide accurate and complete information.
+                    <br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;● Comply with all social media platform rules. (Instagram, Facbook, etc. )
+                    <br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;● Own or have proper rights to any content or materials you provide us.
+                </p>
+                <h3 class="text-2xl md:text-2xl font-bold mb-5">3. Payments and Refunds</h3>
+                <p class="mb-6">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; All payments are non-refundable. Once a service is purchased no refunds or cancellatiions will be issued, regardless of usage or results achived. We reserve the rights to change the pricing of services at anytime as the market demand or sevice availibility changes.</p>
+                <h3 class="text-2xl md:text-2xl font-bold mb-5">4. Performance Guarantees</h3>
+                <p class="mb-6">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; We use our best efforts and proven strategies to grow your social media presence. However, we cannot and do not guarantee any specific results. Growth depends on many factors outside our control, including your content, audience, platform algorithms, market conditions and compliance with platform policies. It is not our responsibility if your account does not grow as expected ir desired.</p>
+                <h3 class="text-2xl md:text-2xl font-bold mb-5">5. Prohibited Conduct</h3>
+                <p class="mb-6">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; You may not use our services for any unlawfull purpose, or to engage in scam, harasment, or fruadulent activity.</p>
+                <h3 class="text-2xl md:text-2xl font-bold mb-5">6. Changes to Terms</h3>
+                <p class="mb-6">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; We may update these terms or the privacy policy from time to time. Continued use of our services after changes constitutes your exceptance of the new versions.</p>
+                <h3 class="text-2xl md:text-2xl font-bold">7. Contact Us</h3>
+                <p class="mb-6">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; If you have any queries about these terms or the privacy policy, please contact us at <a href="mailto:zenthicgrowthmedia@gmail.com" class="bg-blue-100 text-blue hover:bg-blue-300">zenthicgrowthmedia@gmail.com</a></p>
+            </div>  
+        </div>
+    </header>
+    <div id="footer"></div>

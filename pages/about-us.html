@@ -5,11 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Zenthic Growth Media | Digital Agency</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <script src="..\script.js"></script>
-    <style>
-        .image-placeholder { background-color: #f3f4f6; border: 2px dashed #d1d5db; display: flex; align-items: center; justify-content: center; text-align: center; padding: 1rem; color: #9ca3af; }
-        .hero-gradient { background: linear-gradient(135deg, #ffffff 0%, #f0fdf4 100%); }
-    </style>
+    <script src="script.js"></script>
+
 </head>
     <body class="bg-white text-gray-900 font-sans leading-relaxed">
 
@@ -22,6 +19,9 @@
                     <img src="..\assets\zen_growth_green700.png" class="w-10 h-10">
                     <span>ZENTHIC<br>GROWTH MEDIA</span>
                 </a>
+            </div>
+            <div class="text-xl font-black tracking-tighter text-green-700">
+                <a class="flex items-center gap-2">About Us</a>
             </div>
 
             <!-- Hamburger -->
@@ -99,23 +99,23 @@
                     <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center mb-16">
 
                     <div>
-                        <h3 class="text-3xl font-bold text-green-700 counter" data-target="500">0</h3>
+                        <h3 class="text-3xl font-bold text-green-700 counter" data-target="150000">0</h3>
+                        <p class="text-gray-500">Orders</p>
+                    </div>
+
+                    <div>
+                        <h3 class="text-3xl font-bold text-green-700 counter" data-target="600">0</h3>
                         <p class="text-gray-500">Projects</p>
                     </div>
 
                     <div>
-                        <h3 class="text-3xl font-bold text-green-700 counter" data-target="350">0</h3>
+                        <h3 class="text-3xl font-bold text-green-700 counter" data-target="3000">0</h3>
                         <p class="text-gray-500">Clients</p>
                     </div>
 
                     <div>
-                        <h3 class="text-3xl font-bold text-green-700 counter" data-target="6">0</h3>
-                        <p class="text-gray-500">Years Experience</p>
-                    </div>
-
-                    <div>
-                        <h3 class="text-3xl font-bold text-green-700 counter" data-target="24">0</h3>
-                        <p class="text-gray-500">Support</p>
+                        <h3 class="text-3xl font-bold text-green-700 counter" data-target="4">0</h3>
+                        <p class="text-gray-500">Years of Experience</p>
                     </div>
                 </div>
 
@@ -147,25 +147,34 @@
 
         <script>
             const counters = document.querySelectorAll('.counter');
+
             counters.forEach(counter => {
             let target = +counter.getAttribute('data-target');
             let count = 0;
+
+            let format = (num) => {
+                if (num >= 1000) {
+                return Math.floor(num / 1000) + "k+";
+                } else {
+                return Math.floor(num) + "+";
+                }
+            };
 
             let update = () => {
                 let speed = target / 50;
                 count += speed;
 
-                    if (count < target) {
-                    counter.innerText = Math.ceil(count) + "+";
-                    requestAnimationFrame(update);
-                    } else {
-                    counter.innerText = target + "+";
-                    }
-                };
+                if (count < target) {
+                counter.innerText = format(count);
+                requestAnimationFrame(update);
+                } else {
+                counter.innerText = format(target);
+                }
+            };
+
             update();
             });
         </script>
-
         <div id="footer"></div>
     </body>
 </html>
