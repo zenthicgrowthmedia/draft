@@ -6,22 +6,71 @@
     <title>Zenthic Growth Media | Digital Agency</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="script.js"></script>
-    <style>
-        .image-placeholder { background-color: #f3f4f6; border: 2px dashed #d1d5db; display: flex; align-items: center; justify-content: center; text-align: center; padding: 1rem; color: #9ca3af; }
-        .hero-gradient { background: linear-gradient(135deg, #ffffff 0%, #f0fdf4 100%); }
-    </style>
 </head>
 <body class="bg-white text-gray-900 font-sans leading-relaxed">
 
-    <nav class="sticky top-0 z-50 bg-white/80 backdrop-blur-md flex justify-between items-center px-6 md:px-12 py-5 border-b border-gray-100">
-        <div><img src="assets/zen_growth_green700.png" width="50" height="50"></div>
-        <div class="text-xl font-black tracking-tighter text-green-700" ><a href="#home">ZENTHIC GROWTH MEDIA</a></div>
-        <div class="space-x-8 hidden md:flex items-center">
-            <a href="#home" class="text-sm font-medium hover:text-green-700 transition">Home</a>
-            <a href="#about" class="text-sm font-medium hover:text-green-700 transition">About</a>
-            <a href="#services" class="text-sm font-medium hover:text-green-700 transition">Services</a>
-            <a href="#contact" class="bg-green-700 text-white px-5 py-2 rounded-full text-sm font-semibold hover:bg-green-700 transition">Contact Us</a>
+    <nav class="sticky top-0 z-50 bg-white/80 backdrop-blur-md px-6 md:px-12 py-5 border-b border-gray-100">
+        <div class="flex justify-between items-center">
+
+            <!-- Logo -->
+            <div class="text-xl font-black tracking-tighter text-green-700">
+                <a href="../index.html" class="flex items-center gap-2">
+                    <img src="../assets/zen_growth_green700.png" class="w-10 h-10">
+                    <span>ZENTHIC<br>GROWTH MEDIA</span>
+                </a>
+            </div>
+
+            <!-- Hamburger -->
+            <button id="menu-btn" class="md:hidden flex flex-col gap-1">
+                <span class="line w-6 h-0.5 bg-black transition-all"></span>
+                <span class="line w-6 h-0.5 bg-black transition-all"></span>
+                <span class="line w-6 h-0.5 bg-black transition-all"></span>
+            </button>
+
+            <!-- Desktop Menu -->
+            <div class="hidden md:flex space-x-8 items-center">
+                <a href="../index.html" class="hover:text-green-700">Home</a>
+                <a href="about-us.html" class="hover:text-green-700">About</a>
+                <a href="../index.html#services" class="hover:text-green-700">Services</a>
+                <a href="../index.html#contact" class="bg-green-700 text-white px-5 py-2 rounded-full">Contact Us</a>
+            </div>
+
         </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="max-h-0 overflow-hidden transition-all duration-500 ease-in-out md:hidden flex flex-col items-center gap-5 mt-4">
+            <a href="../index.html">Home</a>
+            <a href="about-us.html">About</a>
+            <a href="../index.html#services">Services</a>
+            <a href="../index.html#contact" class="bg-green-700 text-white px-5 py-2 rounded-full">Contact Us</a>
+        </div>
+        <script>
+            const btn = document.getElementById("menu-btn");
+            const menu = document.getElementById("mobile-menu");
+            const lines = document.querySelectorAll(".line");
+
+            let open = false;
+
+            btn.addEventListener("click", () => {
+            open = !open;
+
+            // menu animation
+            if (open) {
+                menu.style.maxHeight = "300px";
+            } else {
+                menu.style.maxHeight = "0px";
+            }
+
+            // hamburger → X animation
+            lines[0].classList.toggle("rotate-45");
+            lines[0].classList.toggle("translate-y-1.5");
+
+            lines[1].classList.toggle("opacity-0");
+
+            lines[2].classList.toggle("-rotate-45");
+            lines[2].classList.toggle("-translate-y-1.5");
+            });
+        </script>
     </nav>
 
     <header id="home" class="hero-gradient">
@@ -54,7 +103,7 @@
             
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 text-left">
 
-               <a href="pages/smm_page.html" class="block">
+               <a href="pages/social-media-boost.html" class="block">
                     <div class="p-8 rounded-2xl shadow-2xl border border-gray-100 bg-gray-50 transition-all duration-300 ease-in-out hover:bg-green-50 hover:border-green-200 hover:shadow-xl hover:-translate-y-2">
                         <div class="w-14 h-14 bg-white rounded-xl mb-6 shadow-sm flex items-center justify-center text-2xl transition-transform duration-300 group-hover:scale-110">📈</div>
                             <h3 class="font-bold text-xl mb-3 transition-colors duration-300 group-hover:text-green-600">Social Media Boosting</h3>
@@ -63,7 +112,7 @@
                     </div>
                 </a>
                 
-                <a href="pages/ads_page.html" class="block">
+                <a href="pages/ads.html" class="block">
                     <div class="p-8 rounded-2xl shadow-2xl border border-gray-100 bg-gray-50 transition-all duration-300 ease-in-out hover:bg-green-50 hover:border-green-200 hover:shadow-xl hover:-translate-y-2">
                         <div class="w-14 h-14 bg-white rounded-xl mb-6 shadow-sm flex items-center justify-center text-2xl transition-transform duration-300 group-hover:scale-100">🎯</div>
                             <h3 class="font-bold text-xl mb-3 transition-colors duration-300 group-hover:text-green-600">Engage Through ADS</h3>
@@ -72,7 +121,7 @@
                     </div>
                 </a>
 
-                <a href="pages/photo_video_editing.html" class="block">
+                <a href="pages/photo-video-editing.html" class="block">
                     <div class="p-8 rounded-2xl shadow-2xl border border-gray-100 bg-gray-50 transition-all duration-300 ease-in-out hover:bg-green-50 hover:border-green-200 hover:shadow-xl hover:-translate-y-2">
                         <div class="w-14 h-14 bg-white rounded-xl mb-6 shadow-sm flex items-center justify-center text-2xl transition-transform duration-300 group-hover:scale-110">🎬</div>
                             <h3 class="font-bold text-xl mb-3 transition-colors duration-300 group-hover:text-green-600">Photo/Video Editing</h3>
@@ -81,7 +130,7 @@
                     </div>
                 </a>
 
-                <a href="pages/graphics_design_page.html" class="block">
+                <a href="pages/graphics-designing.html" class="block">
                     <div class="p-8 rounded-2xl shadow-2xl border border-gray-100 bg-gray-50 transition-all duration-300 ease-in-out hover:bg-green-50 hover:border-green-200 hover:shadow-xl hover:-translate-y-2">
                         <div class="w-14 h-14 bg-white rounded-xl mb-6 shadow-sm flex items-center justify-center text-2xl transition-transform duration-300 group-hover:scale-110">🎨</div>
                             <h3 class="font-bold text-xl mb-3 transition-colors duration-300 group-hover:text-green-600">Graphics Designing</h3>
@@ -90,7 +139,7 @@
                     </div>
                 </a>
               
-                <a href="pages/ui_ux_page.html" class="block">
+                <a href="pages/ui-ux-page.html" class="block">
                     <div class="p-8 rounded-2xl shadow-2xl border border-gray-100 bg-gray-50 transition-all duration-300 ease-in-out hover:bg-green-50 hover:border-green-200 hover:shadow-xl hover:-translate-y-2">
                         <div class="w-14 h-14 bg-white rounded-xl mb-6 shadow-sm flex items-center justify-center text-2xl transition-transform duration-300 group-hover:scale-110">📱</div>
                             <h3 class="font-bold text-xl mb-3 transition-colors duration-300 group-hover:text-green-600">UI/UX Designing</h3>
@@ -98,7 +147,7 @@
                             <span class="text-green-600 text-sm font-semibold opacity-0 transition-opacity duration-300 group-hover:opacity-100"></span>
                     </div>
                 </a>
-                <a href="pages/web_design_page.html" class="block">
+                <a href="pages/web-designing.html" class="block">
                     <div class="p-8 rounded-2xl shadow-2xl border border-gray-100 bg-gray-50 transition-all duration-300 ease-in-out hover:bg-green-50 hover:border-green-200 hover:shadow-xl hover:-translate-y-2">
                         <div class="w-14 h-14 bg-white rounded-xl mb-6 shadow-sm flex items-center justify-center text-2xl transition-transform duration-300 group-hover:scale-110">💻</div>
                             <h3 class="font-bold text-xl mb-3 transition-colors duration-300 group-hover:text-green-600">Web Designing</h3>
@@ -193,53 +242,7 @@
                 <a href="https://youtube.com/@zenthicgrowthmedia?si=g42CyuIpBcobwqGn" class="block"><img src="assets/yt.png" width="45"></a>
             </div>
         </div>
-
     </section>
-
-    <footer class="bg-gray-100 pt-20 pb-10 border-t border-gray-200">
-        <div class="container mx-auto px-6 md:px-12 grid grid-cols-2 lg:grid-cols-5 gap-12 mb-16">
-            <div class="col-span-2 lg:col-span-1">
-                <div class="text-xl font-black tracking-tighter text-green-700 mb-6">ZENTHIC GROWTH MEDIA</div>
-                <p class="font-bold text-xs text-gray-900">© 2026. All copyright reserved.</p>
-            </div>
-            <div>
-                <h5 class="font-bold text-xs uppercase tracking-widest text-gray-400 mb-6">Services</h5>
-                <ul class="text-gray-600 space-y-3 text-sm font-medium">
-                    <li><a href="pages/smm_page.html">Social Media Boost</a></li>
-                    <li><a href="pages/ads_page.html">Engage Through ADS</a></li>
-                    <li><a href="pages/photo_video_editing.html">Photo/Video Editing</a></li>
-                    <li><a href="pages/graphics_design_page.html">Graphics Designing</a></li>
-                    <li><a href="pages/ui_ux_page.html">UI/UX Designing</a></li>
-                    <li><a href="pages/web_design_page.html">Web Designing</a></li>
-                </ul>
-            </div>
-            <div>
-                <h5 class="font-bold text-xs uppercase tracking-widest text-gray-400 mb-6">Solutions</h5>
-                <ul class="text-gray-600 space-y-3 text-sm font-medium">
-                    <li>Enterprise</li>
-                    <li>Startups</li>
-                    <li>Agencies</li>
-                    <li>Freelancers</li>
-                </ul>
-            </div>
-            <div>
-                <h5 class="font-bold text-xs uppercase tracking-widest text-gray-400 mb-6">Resources</h5>
-                <ul class="text-gray-600 space-y-3 text-sm font-medium">
-                    <li>Libraries</li>
-                    <li>Templates</li>
-                    <li>Designers</li>
-                    <li>Developers</li>
-                </ul>
-            </div>
-            <div>
-                <h5 class="font-bold text-xs uppercase tracking-widest text-gray-400 mb-6">Company</h5>
-                <ul class="text-gray-600 space-y-3 text-sm font-medium">
-                    <li><a href="pages/about_page.html">About</a></li>
-                    <li><a href="pages/privacy_policy.html">Privacy Policy</a></li>
-                </ul>
-            </div>
-        </div>
-        <div class="text-center text-gray-400 text-xs">Made with ❤️ by Zenthic Growth Media</div>
-    </footer>
+    <div id="footer"></div>
 </body>
 </html>
